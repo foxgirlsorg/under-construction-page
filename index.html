@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>foxgirls.org</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script type="module" src="assets/ionicons/ionicons.esm.js"></script>
+    <script type="module" src="assets/ionicons/ionicons.js"></script>
+</head>
+<body class="bg">
+
+<div class="container">
+    <h1>FOXGIRLS.ORG</h1>
+    <span class="under">
+        <ion-icon name="fence-caution"></ion-icon>
+        Website under construction
+        <ion-icon name="fence-caution"></ion-icon>
+    </span>
+    <div class="links">
+        <a href="https://t.me/foxgirlsorg" class="iconlink" target="_blank">
+            <ion-icon name="telegram"></ion-icon>
+        </a>
+        <a href="https://github.com/foxgirlsorg" class="iconlink" target="_blank">
+            <ion-icon name="github"></ion-icon>
+        </a>
+        <a href="mailto:contact@foxgirls.org" class="iconlink">
+            <ion-icon name="mail"></ion-icon>
+        </a>
+    </div>
+
+</div>
+<audio id="bgMusic" src="assets/media/song.mp3" loop></audio>
+</body>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const music = document.getElementById('bgMusic');
+
+    if (params.has('music')) {
+        const tryPlay = () => {
+            music.volume = 1.0;
+            music.play().catch(() => {
+                const resume = () => {
+                    music.play();
+                    document.removeEventListener('click', resume);
+                };
+                document.addEventListener('click', resume);
+            });
+        };
+
+        document.addEventListener('DOMContentLoaded', tryPlay);
+    }
+</script>
+</html>

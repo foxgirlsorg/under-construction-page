@@ -1,0 +1,117 @@
+@font-face {
+    font-family: "Mukta Light";
+    src: url("../fonts/Mukta-Light.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Mukta Regular";
+    src: url("../fonts/Mukta-Regular.ttf") format("truetype");
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    backdrop-filter: blur(7px);
+}
+
+
+@supports (height: 100dvh) {
+    .container {
+        height: 100dvh;
+    }
+}
+
+
+body.bg {
+    background-image: url("../media/bg.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+h1  {
+    font-family: "Mukta Light", sans-serif;
+    font-size: 4rem;
+    color: #de6161;
+    line-height: 4rem;
+}
+span.under {
+    font-family: "Mukta Regular", sans-serif;
+    color: #de6161;
+    font-size: 1.3em;
+
+}
+span.under ion-icon {
+    font-size: 1rem;
+    vertical-align: baseline;
+}
+
+a {
+    text-decoration: none;
+}
+
+div.links {
+    display: flex;
+    align-items: center;
+}
+
+div.links a {
+    color: #de6161;
+    transition: .3s;
+    font-size: 1.2rem;
+    margin: 0 5px;
+}
+
+div.links a:hover {
+    color: #fa8787;
+}
+div.links a ion-icon[name="mail"] {
+    font-size: 1.4rem;
+}
+
+@media (max-width: 1300px) {
+    body.bg {
+        background-position: right center;
+    }
+}
+
+@media (max-width: 750px) {
+    body.bg {
+        background-position: right -100px center;
+    }
+    div.links a {
+        font-size: 1.6rem;
+        margin: 10px;
+    }
+
+    div.links a ion-icon[name="mail"] {
+        font-size: 1.7rem;
+    }
+
+}
+
+@media (max-width: 500px) {
+    body.bg {
+        background-position: right -50vw center;
+    }
+}
+
+@media (max-width: 380px) {
+    h1 {
+        font-size: 3rem;
+    }
+}
+
+
+
+.spacing {
+    font-size: .8rem;
+}
