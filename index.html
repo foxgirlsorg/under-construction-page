@@ -13,8 +13,11 @@
     <img src="assets/media/logo.png">
     <span class="loader"></span>
 </div>
-
+<div class="caticon" id="cat">
+    <ion-icon name="cat"></ion-icon>
+</div>
 <div class="container">
+
     <h1>FOXGIRLS.ORG</h1>
     <span class="under">
         <ion-icon name="fence-caution"></ion-icon>
@@ -34,27 +37,35 @@
     </div>
 
 </div>
-<audio id="bgMusic" src="assets/media/song.mp3" loop></audio>
+<audio id="bgMusic" loop>
+    <source src="assets/media/song.mp3x" type="audio/mpeg">
+</audio>
+
 </body>
 
 <script>
-    const params = new URLSearchParams(window.location.search);
     const music = document.getElementById('bgMusic');
+    const cat = document.getElementById('cat');
+    let isPlaying = false;
+    let firstStart = true;
 
-    if (params.has('music')) {
-        const tryPlay = () => {
+    cat.addEventListener('click', () => {
+        if (!isPlaying) {
+            if (firstStart) {
+                music.currentTime = 39.5;
+                firstStart = false;
+            }
             music.volume = 1.0;
-            music.play().catch(() => {
-                const resume = () => {
-                    music.play();
-                    document.removeEventListener('click', resume);
-                };
-                document.addEventListener('click', resume);
+            music.play().then(() => {
+                isPlaying = true;
+            }).catch(() => {
             });
-        };
+        } else {
+            music.pause();
+            isPlaying = false;
+        }
+    });
 
-        document.addEventListener('DOMContentLoaded', tryPlay);
-    }
 </script>
 
 
