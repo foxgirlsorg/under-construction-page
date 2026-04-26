@@ -158,19 +158,3 @@ div.links a ion-icon[name="mail"] {
 .spacing {
     font-size: .8rem;
 }
-
-.caticon  {
-    position: absolute;
-    color: #de6161;
-    bottom: 7px;
-    right: 12px;
-    z-index: 2;
-    font-size: 20px;
-    cursor: pointer;
-    opacity: 0.5;
-    transition: .5s;
-}
-
-.caticon:hover {
-    opacity: 1;
-}

@@ -13,9 +13,6 @@
     <img src="assets/media/logo.png">
     <span class="loader"></span>
 </div>
-<div class="caticon" id="cat">
-    <ion-icon name="cat"></ion-icon>
-</div>
 <div class="container">
 
     <h1>FOXGIRLS.ORG</h1>
@@ -42,31 +39,6 @@
 </audio>
 
 </body>
-
-<script>
-    const music = document.getElementById('bgMusic');
-    const cat = document.getElementById('cat');
-    let isPlaying = false;
-    let firstStart = true;
-
-    cat.addEventListener('click', () => {
-        if (!isPlaying) {
-            if (firstStart) {
-                music.currentTime = 39.5;
-                firstStart = false;
-            }
-            music.volume = 1.0;
-            music.play().then(() => {
-                isPlaying = true;
-            }).catch(() => {
-            });
-        } else {
-            music.pause();
-            isPlaying = false;
-        }
-    });
-
-</script>
 
 
 <script>
